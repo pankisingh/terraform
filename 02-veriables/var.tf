@@ -9,6 +9,6 @@ output "sample" {
 variable "sample2" {
 }
 
-output "sample" {
+output "sample2" {
   value = var.sample2
 }
