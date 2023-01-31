@@ -26,6 +26,6 @@ variable "boolean" {
 }
 
 
-output "data.types" {
+output "data-types" {
   value = "string = ${var.string}, boolean =  ${var.boolean}, number = ${var.number}"
 }
