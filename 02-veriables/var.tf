@@ -44,6 +44,23 @@ output "var-types1" {
 }
 
 
+variable "Fruits" {  
+}
+
+output "Fruits1" {
+  value = var.Fruits
+}
+
+
+variable "COUNTRY" {  
+}
+
+output "COUNTRY" {
+  value = var.COUNTRY
+}
+
+
+
 
 
 output "var-types" {
