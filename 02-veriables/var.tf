@@ -29,3 +29,29 @@ variable "boolean" {
 output "data-types" {
   value = "string = ${var.string}, boolean =  ${var.boolean}, number = ${var.number}"
 }
+
+
+variable "Tranning" {
+    default = ["devosp", "aws", "azure"]
+}
+
+variable "Tranning-details" {
+    default = {devosp = "6 AM", aws = "7 AM", azure = "8 AM"}
+}
+
+output "var-types1" {
+  value = var.Tranning[0]
+}
+
+
+
+
+output "var-types" {
+  value = "Traning = ${var.Tranning-details["devosp"]}"
+}
+
+
+
+
+
+
