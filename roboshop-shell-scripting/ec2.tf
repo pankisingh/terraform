@@ -31,25 +31,25 @@ resource "aws_route53_record" "records" {
 
 
 
-# resource "null_resource" "run-shell-scripting" {
-#   depends_on                = [aws_route53_record.records]
-#   count                     = local.LENGTH
-#   provisioner "remote-exec" {
-#     connection {
-#       host                  = element(aws_spot_instance_request.cheap_worker.*.public_ip, count.index)
-#       user                  = "centos"
-#       password              = "DevOps321"
-#     }
+resource "null_resource" "run-shell-scripting" {
+  depends_on                = [aws_route53_record.records]
+  count                     = local.LENGTH
+  provisioner "remote-exec" {
+    connection {
+      host                  = element(aws_spot_instance_request.cheap_worker.*.public_ip, count.index)
+      user                  = "centos"
+      password              = "DevOps321"
+    }
 
-#     inline = [
-#     "cd /home/centos",
-#     "git clone https://github.com/pankisingh/shell-scripting-2023.git",
-#     "cd shell-scripting-2023/Roboshop",
-#     "git pull",
-#     "sudo make ${element(var.COMPONENTS, count.index)}"
-#     ]
-#   }
-# }
+    inline = [
+    "cd /home/centos",
+    "git clone https://github.com/pankisingh/shell-scripting-2023.git",
+    "cd shell-scripting-2023/Roboshop",
+    "git pull",
+    "sudo make ${element(var.COMPONENTS, count.index)}"
+    ]
+  }
+}
 
 
 locals {
